@@ -24,7 +24,7 @@ const RESERVED_NAMES = ['_mouse_', '_stage_', '_edge_', '_myself_', '_random_'];
 class VirtualMachine extends EventEmitter {
     constructor () {
         super();
-        console.log('VirtualMachine start my 2018-02-03-B');
+        console.log('scratch-vm virtual-machine.js my 2018-02-03-B');
         /**
          * VM runtime, to store blocks, I/O devices, sprites/targets, etc.
          * @type {!Runtime}
