@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const Cast = require('../util/cast');
 const Clone = require('../util/clone');
 const RenderedTarget = require('../sprites/rendered-target');
@@ -217,6 +218,27 @@ class Scratch3LooksBlocks {
      */
     getPrimitives () {
         return {
+            gs_light_ultrasonic: this.gsLightUltrasonic,
+            gs_light_ultrasonic_2: this.gsLightUltrasonic_2,
+            gs_light_ultrasonic_3: this.gsLightUltrasonic_3,
+            gs_light_ultrasonic_4: this.gsLightUltrasonic_3,
+            gs_light_change: this.gsLightChange,
+            gs_light_change_2: this.gsLightChange_2,
+            gs_light_change_3: this.gsLightChange_3,
+            gs_matrix_change: this.gsMatrixChange,
+            gs_matrix_change_2: this.gsMatrixChange_2,
+            gs_matrix_change_3: this.gsMatrixChange_3,
+            gs_matrix_change_4: this.gsMatrixChange_4,
+            gs_matrix_change_5: this.gsMatrixChange_5,
+            gs_matrix_change_5A: this.gsMatrixChange_5,
+            gs_matrix_change_5B: this.gsMatrixChange_5,
+            gs_matrix_change_5C: this.gsMatrixChange_5,
+            gs_matrix_change_6: this.gsMatrixChange_6,
+            gs_matrix_change_6A: this.gsMatrixChange_6,
+            gs_matrix_change_6B: this.gsMatrixChange_6,
+            gs_matrix_change_6C: this.gsMatrixChange_6,
+            gs_matrix_change_7: this.gsMatrixChange_7,
+            gs_matrix_change_8: this.gsMatrixChange_8,
             looks_say: this.say,
             looks_sayforsecs: this.sayforsecs,
             looks_think: this.think,
@@ -247,6 +269,121 @@ class Scratch3LooksBlocks {
             looks_costumenumbername: {isSpriteSpecific: true},
             looks_backdropnumbername: {}
         };
+    }
+
+    gsLightUltrasonic (args, util) {
+        GsBlocks.blockCallBack('gs_light_ultrasonic', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsLightUltrasonic_2 (args, util) {
+        GsBlocks.blockCallBack('gs_light_ultrasonic_2', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsLightUltrasonic_3 (args, util) {
+        GsBlocks.blockCallBack('gs_light_ultrasonic_3', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+
+    gsLightChange (args, util) {
+        GsBlocks.blockCallBack('gs_light_change', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsLightChange_2 (args, util) {
+        GsBlocks.blockCallBack('gs_light_change_2', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsLightChange_3 (args, util) {
+        GsBlocks.blockCallBack('gs_light_change_3', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+
+    gsMatrixChange (args, util) {
+        GsBlocks.blockCallBack('gs_matrix_change', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsMatrixChange_2 (args, util) {
+        GsBlocks.blockCallBack('gs_matrix_change_2', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsMatrixChange_3 (args, util) {
+        GsBlocks.blockCallBack('gs_matrix_change_3', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsMatrixChange_4 (args, util) {
+        GsBlocks.blockCallBack('gs_matrix_change_4', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsMatrixChange_5 (args, util) {
+        GsBlocks.blockCallBack('gs_matrix_change_5', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsMatrixChange_6 (args, util) {
+        GsBlocks.blockCallBack('gs_matrix_change_6', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsMatrixChange_7 (args, util) {
+        GsBlocks.blockCallBack('gs_matrix_change_7', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
+    }
+    gsMatrixChange_8 (args, util) {
+        GsBlocks.blockCallBack('gs_matrix_change_8', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 300);
+    });
     }
 
     say (args, util) {

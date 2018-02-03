@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const Cast = require('../util/cast');
 const MathUtil = require('../util/math-util');
 const Timer = require('../util/timer');
@@ -17,6 +18,11 @@ class Scratch3MotionBlocks {
      */
     getPrimitives () {
         return {
+            gs_motion_move: this.gsMoveSteps,
+            gs_motion_move_2: this.gsMoveSteps_2,
+            gs_motion_move_3: this.gsMoveSteps_3,
+            gs_motion_steering_engine: this.gsSteeringEngine,
+
             motion_movesteps: this.moveSteps,
             motion_gotoxy: this.goToXY,
             motion_goto: this.goTo,
@@ -36,6 +42,39 @@ class Scratch3MotionBlocks {
             motion_yposition: this.getY,
             motion_direction: this.getDirection
         };
+    }
+
+    gsMoveSteps (args, util) {
+        GsBlocks.blockCallBack('gs_motion_move', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 100);
+    });
+    }
+    gsMoveSteps_2 (args, util) {
+        GsBlocks.blockCallBack('gs_motion_move_2', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 100);
+    });
+    }
+    gsMoveSteps_3 (args, util) {
+        GsBlocks.blockCallBack('gs_motion_move_3', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, 100);
+    });
+    }
+    gsSteeringEngine (args, util) {
+        GsBlocks.blockCallBack('gs_motion_steering_engine', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+            }, 100);
+        });
     }
 
     getMonitored () {

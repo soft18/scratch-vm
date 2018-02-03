@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 class Scratch3ProcedureBlocks {
     constructor (runtime) {
         /**

@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const Cast = require('../util/cast');
 
 class Scratch3SensingBlocks {
@@ -31,6 +32,10 @@ class Scratch3SensingBlocks {
      */
     getPrimitives () {
         return {
+            gs_sensing_mousedown: this.gsGetMouseDown,
+            gs_sensing_distanceto: this.gsDistanceTo,
+            gs_sensing_linePatrolValue: this.gsLinePatrolValue,
+
             sensing_touchingobject: this.touchingObject,
             sensing_touchingcolor: this.touchingColor,
             sensing_coloristouchingcolor: this.colorTouchingColor,
@@ -49,6 +54,25 @@ class Scratch3SensingBlocks {
             sensing_askandwait: this.askAndWait,
             sensing_answer: this.getAnswer
         };
+    }
+
+    gsGetMouseDown(args, util) {
+        const result = GsBlocks.blockCallBack('gs_sensing_mousedown', args, util, true);
+        return result;
+    }
+    gsDistanceTo(args, util) {
+        let result = GsBlocks.blockCallBack('gs_sensing_distanceto', args, util, true);
+        if (result <= 0) {
+            result = 0;
+        }
+        return result;
+    }
+    gsLinePatrolValue(args, util) {
+        let result = GsBlocks.blockCallBack('gs_sensing_linePatrolValue', args, util, true);
+        if (result <= 0) {
+            result = 0;
+        }
+        return result;
     }
 
     getMonitored () {

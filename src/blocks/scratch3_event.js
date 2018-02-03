@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const Cast = require('../util/cast');
 
 class Scratch3EventBlocks {
@@ -23,6 +24,12 @@ class Scratch3EventBlocks {
 
     getHats () {
         return {
+            gs_event_whenflagclicked: {
+                restartExistingThreads: true
+            },
+            gs_event_whenthisspriteclicked: {
+                restartExistingThreads: true
+            },
             event_whenflagclicked: {
                 restartExistingThreads: true
             },

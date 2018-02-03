@@ -1,3 +1,4 @@
+const GsBlocks = require('../myvm/blocks/gs_blocks');
 const TextEncoder = require('text-encoding').TextEncoder;
 const EventEmitter = require('events');
 
@@ -23,7 +24,7 @@ const RESERVED_NAMES = ['_mouse_', '_stage_', '_edge_', '_myself_', '_random_'];
 class VirtualMachine extends EventEmitter {
     constructor () {
         super();
-
+        console.log('VirtualMachine start my 2018-02-03-B');
         /**
          * VM runtime, to store blocks, I/O devices, sprites/targets, etc.
          * @type {!Runtime}
@@ -87,6 +88,19 @@ class VirtualMachine extends EventEmitter {
         this.flyoutBlockListener = this.flyoutBlockListener.bind(this);
         this.monitorBlockListener = this.monitorBlockListener.bind(this);
         this.variableListener = this.variableListener.bind(this);
+    }
+
+    /**
+     * callBack do event ,myself
+     */
+    setGsCallback (back){
+        GsBlocks.setCallBack(back);
+    }
+
+    gsEventRun(type, data) {
+        if (type === 'gs_event_whenthisspriteclicked') {
+            this.runtime.startHats('gs_event_whenthisspriteclicked');
+        }
     }
 
     /**

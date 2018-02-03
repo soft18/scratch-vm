@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const Cast = require('../util/cast');
 
 class Scratch3DataBlocks {
@@ -15,6 +16,10 @@ class Scratch3DataBlocks {
      */
     getPrimitives () {
         return {
+            gs_data_variable: this.gsGetVariable,
+            gs_data_setvariableto: this.gsSetVariableTo,
+            gs_data_changevariableby: this.gsChangeVariableBy,
+
             data_variable: this.getVariable,
             data_setvariableto: this.setVariableTo,
             data_changevariableby: this.changeVariableBy,
@@ -27,6 +32,21 @@ class Scratch3DataBlocks {
             data_lengthoflist: this.lengthOfList,
             data_listcontainsitem: this.listContainsItem
         };
+    }
+
+    gsGetVariable (args, util) {
+        const variable = util.target.lookupOrCreateVariable(args.VARIABLE2);
+        return variable.value;
+    }
+    gsSetVariableTo (args, util) {
+        const variable = util.target.lookupOrCreateVariable(args.VARIABLE2);
+        variable.value = args.VALUE;
+    }
+    gsChangeVariableBy (args, util) {
+        const variable = util.target.lookupOrCreateVariable(args.VARIABLE2);
+        const castedValue = Cast.toNumber(variable.value);
+        const dValue = Cast.toNumber(args.VALUE);
+        variable.value = castedValue + dValue;
     }
 
     getVariable (args, util) {

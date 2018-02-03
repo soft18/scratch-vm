@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const MathUtil = require('../util/math-util');
 const Cast = require('../util/cast');
 const Clone = require('../util/clone');
@@ -116,6 +117,15 @@ class Scratch3SoundBlocks {
      */
     getPrimitives () {
         return {
+            gs_sound_play: this.gsSoundPlay,
+            gs_sound_play_2: this.gsSoundPlay,
+            gs_sound_play_3: this.gsSoundPlay,
+            gs_sound_play_4: this.gsSoundPlay,
+            gs_sound_play_5: this.gsSoundPlay,
+            gs_sound_play_6: this.gsSoundPlay,
+            gs_sound_play_7: this.gsSoundPlay,
+            gs_sound_play_8: this.gsSoundPlay,
+
             sound_play: this.playSound,
             sound_playuntildone: this.playSoundAndWait,
             sound_stopallsounds: this.stopAllSounds,
@@ -129,6 +139,21 @@ class Scratch3SoundBlocks {
             sound_changevolumeby: this.changeVolume,
             sound_volume: this.getVolume
         };
+    }
+    gsSoundPlay(args, util) {
+        GsBlocks.blockCallBack('gs_sound_play', args, util, false);
+        var time = Cast.toNumber(args.SECOND);
+        time = parseInt(time);
+        if (time < 0) {
+            time = 1;
+        }else{
+            time = time * 1.3;
+        }
+        return new Promise(resolve => {
+            setTimeout(() => {
+            resolve();
+        }, time );
+    });
     }
 
     getMonitored () {

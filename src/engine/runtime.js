@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const EventEmitter = require('events');
 const {OrderedMap} = require('immutable');
 const escapeHtml = require('escape-html');
@@ -930,6 +931,21 @@ class Runtime extends EventEmitter {
             target: this._editingTarget,
             stackClick: false
         }, opts);
+        const that = this;
+        const blockContainer2 = opts.target.blocks;
+        const opcode2 = blockContainer2.getOpcode(blockContainer2.getBlock(topBlockId));
+        (GsBlocks.blockClick(opcode2, true)).then(function (backResult) {
+            if (backResult === 0 && opcode2 === 'gs_event_whenthisspriteclicked') {
+                return 0;
+            }
+            if (backResult === -4) {
+                return 0;
+            }
+            that.toggleScript_work(topBlockId, opts);
+        });
+    }
+
+    toggleScript_work(topBlockId, opts) {
         // Remove any existing thread.
         for (let i = 0; i < this.threads.length; i++) {
             // Toggling a script that's already running turns it off

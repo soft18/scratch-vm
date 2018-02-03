@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const Cast = require('../util/cast.js');
 const MathUtil = require('../util/math-util.js');
 
@@ -16,6 +17,18 @@ class Scratch3OperatorsBlocks {
      */
     getPrimitives () {
         return {
+            gs_operator_add: this.add,
+            gs_operator_subtract: this.subtract,
+            gs_operator_multiply: this.multiply,
+            gs_operator_divide: this.divide,
+            gs_operator_random: this.random,
+            gs_operator_lt: this.lt,
+            gs_operator_equals: this.equals,
+            gs_operator_gt: this.gt,
+            gs_operator_and: this.and,
+            gs_operator_or: this.or,
+            gs_operator_not: this.not,
+
             operator_add: this.add,
             operator_subtract: this.subtract,
             operator_multiply: this.multiply,

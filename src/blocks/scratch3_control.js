@@ -1,3 +1,4 @@
+const GsBlocks = require('../../myvm/blocks/gs_blocks');
 const Cast = require('../util/cast');
 
 class Scratch3ControlBlocks {
@@ -15,6 +16,14 @@ class Scratch3ControlBlocks {
      */
     getPrimitives () {
         return {
+            gs_control_wait: this.wait,
+            gs_control_repeat: this.repeat,
+            gs_control_forever: this.forever,
+            gs_control_repeat_until: this.repeatUntil,
+            gs_control_if: this.if,
+            gs_control_if_else: this.ifElse,
+            gs_control_wait_until: this.waitUntil,
+            gs_control_stop: this.stop,
             control_repeat: this.repeat,
             control_repeat_until: this.repeatUntil,
             control_forever: this.forever,
