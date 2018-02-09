@@ -35,6 +35,10 @@ class Scratch3SensingBlocks {
             gs_sensing_mousedown: this.gsGetMouseDown,
             gs_sensing_distanceto: this.gsDistanceTo,
             gs_sensing_linePatrolValue: this.gsLinePatrolValue,
+            gs_sensing_lightValue: this.gsLightValue,
+            gs_sensing_voiceValue:this.gsVoiceValue,
+            gs_sensing_humidityValue:this.gshumidityValue,
+            gs_sensing_temperatureValue:this.gstemperatureValue,
 
             sensing_touchingobject: this.touchingObject,
             sensing_touchingcolor: this.touchingColor,
@@ -69,6 +73,38 @@ class Scratch3SensingBlocks {
     }
     gsLinePatrolValue(args, util) {
         let result = GsBlocks.blockCallBack('gs_sensing_linePatrolValue', args, util, true);
+        if (result <= 0) {
+            result = 0;
+        }
+        return result;
+    }
+
+    gsLightValue(args, util) {
+        let result = GsBlocks.blockCallBack('gs_sensing_lightValue', args, util, true);
+        if (result <= 0) {
+            result = 0;
+        }
+        return result;
+    }
+
+    gsVoiceValue(args, util) {
+        let result = GsBlocks.blockCallBack('gs_sensing_voiceValue', args, util, true);
+        if (result <= 0) {
+            result = 0;
+        }
+        return result;
+    }
+
+    gstemperatureValue(args, util) {
+        let result = GsBlocks.blockCallBack('gs_sensing_temperatureValue', args, util, true);
+        if (result <= 0) {
+            result = 0;
+        }
+        return result;
+    }
+
+    gshumidityValue(args, util) {
+        let result = GsBlocks.blockCallBack('gs_sensing_humidityValue', args, util, true);
         if (result <= 0) {
             result = 0;
         }
