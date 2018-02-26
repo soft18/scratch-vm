@@ -24,6 +24,8 @@ class Scratch3MotionBlocks {
             gs_motion_steering_engine: this.gsSteeringEngine,
             gs_motion_external_motor: this.gsExternalMotor,
             motion_movesteps: this.moveSteps,
+            gs_motion_external_motor: this.gsExternalMotor,
+            gs_motion_stopMove:this.gsStopMove,
             motion_gotoxy: this.goToXY,
             motion_goto: this.goTo,
             motion_turnright: this.turnRight,
@@ -70,6 +72,23 @@ class Scratch3MotionBlocks {
     }
     gsSteeringEngine (args, util) {
         GsBlocks.blockCallBack('gs_motion_steering_engine', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+            }, 100);
+        });
+    }
+
+    gsExternalMotor (args, util) {
+        GsBlocks.blockCallBack('gs_motion_external_motor', args, util,false);
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve();
+            }, 100);
+        });
+    }
+    gsStopMove (args, util) {
+        GsBlocks.blockCallBack('gs_motion_stopMove', args, util,false);
         return new Promise(resolve => {
             setTimeout(() => {
                 resolve();
