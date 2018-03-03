@@ -219,6 +219,10 @@ class Thread {
         if (parentStackFrame !== null) {
             parentStackFrame.justReported = value;
         }
+        if (parentStackFrame) {
+            const waitingReporter = parentStackFrame.waitingReporter;
+            parentStackFrame.reported[waitingReporter] = value;
+        }
     }
 
     /**
